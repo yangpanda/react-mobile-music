@@ -7,6 +7,9 @@
 ```bash
 yarn add react react-dom
 yarn add -D @types/react @types/react-dom
+
+yarn add react-router-dom
+react-redux
 ```
 
 ## ts

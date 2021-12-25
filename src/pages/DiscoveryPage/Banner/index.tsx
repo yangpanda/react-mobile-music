@@ -1,23 +1,19 @@
 import './style.scss';
+import { getBanner } from '@/apis/banner';
 
 import { Swiper, Image } from 'antd-mobile';
 import { useEffect, useState } from 'react';
+import { IBanner } from '@/models/IBanner';
 
 function Banner() {
-  const [banners, setBanners] = useState<Array<any>>([]);
+  const [banners, setBanners] = useState<Array<IBanner>>([]);
 
   useEffect(() => {
-    async function getBanners() {
-      const res = await fetch('http://localhost:3000/banner?type=2');
-      if (res.ok) {
-        const json = await res.json();
-        if (json.code == 200) {
-          setBanners(json.banners);
-        }
-      }
+    async function getBannerFn() {
+      const res = await getBanner();
+      setBanners(res);
     }
-
-    getBanners();
+    getBannerFn();
   }, []);
 
   return (
@@ -26,7 +22,7 @@ function Banner() {
         <Swiper autoplay loop>
           {banners.map((item, index) => (
             <Swiper.Item key={index}>
-              <Image src={item.pic} lazy style={{ borderRadius: 8 }}></Image>
+              <Image src={item.imageUrl || item.pic} style={{ borderRadius: 8 }}></Image>
             </Swiper.Item>
           ))}
         </Swiper>

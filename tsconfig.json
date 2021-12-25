@@ -2,19 +2,19 @@
   "compilerOptions": {
     "outDir": "./dist/",
     "target": "es5",
-    "allowJs": true,
+    "downlevelIteration": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "ESNext",
+    "esModuleInterop": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
     "noEmit": false,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "paths": {
+      "@*": ["./src/*"]
+    }
   },
   "include": [
     "src"

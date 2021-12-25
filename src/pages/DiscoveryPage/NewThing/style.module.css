@@ -1,0 +1,21 @@
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  display: inline;
+  font-weight: normal;
+}
+
+.navItem:not(:first-child)::before {
+  content: '';
+  height: .8em;
+  border-left: 1px solid rgba(0, 0, 0, .2);
+  margin: 0 6px;
+}
+
+.navItem.active {
+  font-weight: bold;
+}

@@ -1,0 +1,15 @@
+.song {
+  display: flex;
+}
+
+.info {
+  color: #fff;
+}
+
+.name {
+  font-weight: normal;
+}
+
+.album {
+  font-weight: normal;
+}
